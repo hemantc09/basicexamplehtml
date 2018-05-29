@@ -1,0 +1,29 @@
+/*by hemantc09*/
+body
+{
+	font-size: 16px; /*root size we can set here*/
+}
+
+h1{
+	font-family: sansita;
+	text-align:center;
+
+}
+
+h1{
+	font-size: 3.0em;
+	text-decoration: line-through; /*it is used for the strikethrough */
+}
+
+p{
+	font-size: 1.5em;
+	font-weight: bold; /*bold or you can use100,200,300,....800 */
+	line-height:1.5; /* in between lines*/
+	font-family: "Arial"; /* "" are not mandatory but sometitmes you have to put it */
+	text-align: center;
+	text-decoration: underline;
+}
+span{
+
+	font-size: 2.0em; /*choose the size based on teh parent element*/
+}

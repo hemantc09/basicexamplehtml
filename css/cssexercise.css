@@ -1,0 +1,60 @@
+
+/*by hemantc09*/
+/*
+specifity notes:
+
+- Type Selector - 
+
+li{
+	
+}
+
+li a {
+	
+}
+
+li + a{
+	
+}
+
+- Class, Attribute and Pseudo-class Selector - 
+
+.helloclass{
+	
+}
+
+input[type="text"]{
+	
+}
+
+- ID selector - 
+
+#hello{
+	
+}
+
+*/
+
+body{
+	color: red;
+}
+
+p{
+	color: green;
+}
+
+ul{
+	color: brown;
+}
+
+li{
+	color: orange;
+}
+
+.highlight{
+	color: blue
+}
+#special{
+
+	color: gray;
+}

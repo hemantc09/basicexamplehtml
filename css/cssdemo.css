@@ -1,0 +1,29 @@
+/*by hemantc09*/
+
+/* * selector apply to eveyr single element on the web page*/
+* {
+	border: 1px solid gray;
+}
+
+/* decendant selector */
+li  a {
+
+	color: red;
+}
+
+/*Adjacent Selector e.g. it comes afte the tag specified */
+
+h4 + ul {
+	border: 4px solid green;
+}
+
+/*Attribute Selector e.g.based on the attribute of a particular i.e.g A tag 'href' ATTRIBUTE*/
+a[href="http://www.github.com"]{ /* it will only change when href="http://www.github.com" */
+	background: orange;
+}
+
+/* nth of type .e.g. only 2nd ul on the webpage etc you can put number as (even)*/
+
+ul:nth-of-type(2){  
+	background: pink;
+}

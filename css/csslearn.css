@@ -1,0 +1,56 @@
+
+/*by hemantc09*/
+/*selector{
+	property: value;
+}*/
+
+/* e.g. h1 is the element selector*/
+
+h1{
+	color: green;
+
+	/*border-color: yellow;
+	border-width:5px;
+	border-style: solid;*/
+
+	border: 5px solid black; /*combine border property in one as above*/
+}
+h2{
+	color: #FF00AA; /*hex color code*/
+}
+
+h3
+{
+	color: rgb(0,111,255); /* 0-255 color code for red, green,blue*/
+}
+h4{
+	color: purple;
+}
+
+h5{
+	color: rgba(0,111,255,.7); /* 0-255 color code for red, green,blue*,alpha  e.g. alpha is the opacity 0 to 1 */
+}
+
+p{
+	background: pink;
+}
+
+body
+{
+	/*background: orange;*/
+	background: url("https://newevolutiondesigns.com/images/freebies/white-wallpaper-18.jpg");
+	background-repeat: no-repeat; /*dont repeat the background*/
+	background-size: cover; /*This will cover the one background image*/
+}
+
+li{  /*selector element*/
+	border: 2px solid red;
+}
+
+#special{ /*selector id with #*/
+	background: yellow
+}
+
+.completed{
+	text-decoration: line-through; /*this will add the strikethrough*/
+}

@@ -1,0 +1,27 @@
+/*by hemantc09*/
+h4{
+	text-align: center;
+	color: blue;
+}
+
+table{
+	margin: 0 auto; /*top and bottom is 0 and left and right is auto*/
+	/*border: 1px;*/
+	border-collapse: collapse;
+
+}
+td{
+	width:50px;
+	height: 50px;
+	
+}
+
+.verticle{
+	border-left: 1px solid black; 
+	border-right: 1px solid black;
+}
+
+.horizontal{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}

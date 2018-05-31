@@ -1,0 +1,20 @@
+/*by hemantc09*/
+
+img{
+	width: 30%;
+	float: left; /*this will push all the images to the left and remove the whote space between images*/
+	margin:1.66%; /*remaing 10% of screen we can use as a margin i.e.*/
+}
+
+p{
+	font-family: plaster;
+	font-size: 15px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-left: 1.66%;
+	border-bottom: 3px solid red; 
+	padding-bottom: 5px;
+	width: 30%;
+}
+
+

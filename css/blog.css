@@ -1,0 +1,51 @@
+/*by hemantc09*/
+
+/*
+body,width, border 20px. 
+
+border color:#bdc3c7 - done
+date color: #3498db; - done
+h2 coolor :#2c3e50
+font :source sance pro ; google fonts
+p : left border gray ;
+align and margin and padding
+date : all caps css;
+
+letter spacing in date
+
+in between space: horizontal style research;
+
+
+*/
+
+body{
+	border: 20px solid #bdc3c7 ;
+	margin: 20px auto;
+	width: 80%;
+	font-family: Source Sans Pro;
+	padding: 20px 20px 20px 20px;
+}
+
+.date{
+	color: #3498db;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+
+h2{
+	color: #2c3e50;
+
+}
+
+.verticle{
+	border-left: 5px solid #bdc3c7;
+	padding-left: 5px;
+}
+
+hr{
+	/*color: rgba(189, 195, 199, 0.1);*/
+	/*color: rgb(000,000,000);*/
+	border: 1px solid;
+	border-color: rgba(189, 195, 199, 0.5)
+}

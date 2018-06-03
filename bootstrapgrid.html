@@ -1,0 +1,77 @@
+<!-- by hemantc09 bootstrap grid system -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		bootstrap grid
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<style type="text/css">
+		.orangeclr{
+			background-color: orange;
+			border: 1px solid blue;
+		}
+		.grayclr
+		{
+			background-color: gray;
+			border: 1px dashed red;
+			height: 50px
+		}
+	</style>
+</head>
+<body>
+<!-- objectives
+1. Understand purpose of grid
+2. Understand the 4 different grid sizers
+3. Write nested grid
+ -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2 orangeclr">COLUMN LARGE 2</div>
+		<div class="col-lg-8 orangeclr">COLUMN LARGE 8</div>
+		<div class="col-lg-2 orangeclr">COLUMN LARGE 2</div>
+	</div>
+	<hr>
+	
+	<div class="row">
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+		<div class="col-lg-1 col-md-2 orangeclr">COLUMN LARGE 1</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-3 col-sm-6 orangeclr">
+			<div class="row">
+				<div class="col-lg-6 grayclr"> 1 half way nested</div>
+				<div class="col-lg-6 grayclr"> 2 half way nested</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 orangeclr">Tour Date</div>
+		<div class="col-md-3 col-sm-6 orangeclr">Tour Date</div>
+		<div class="col-md-3 col-sm-6 orangeclr">
+			<div class="row">
+				<div class="col-lg-2 grayclr"></div>
+				<div class="col-lg-2 grayclr"></div>
+				<div class="col-lg-2 grayclr"></div>
+				<div class="col-lg-2 grayclr"></div>
+				<div class="col-lg-2 grayclr"></div>
+				<div class="col-lg-2 grayclr"></div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	
+</div>
+
+</body>
+</html>

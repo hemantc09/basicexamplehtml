@@ -15,6 +15,8 @@ function myForEach(arr, func){ //func is a function and its without parathesis
 	}	
 }
 
+
+
 var colors = ["red","blue","orange"];
 myForEach(colors,function(color){
 	console.log(color);

@@ -1,0 +1,14 @@
+/*by hemantc09*/
+
+.some_class{
+	color: blue;
+	border: 10px dashed blue  ;
+}
+
+
+.big{
+	font-size: 100px;
+	color:orange;
+	border:10px solid red;
+	background: gray;
+}

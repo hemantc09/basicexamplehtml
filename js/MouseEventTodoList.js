@@ -9,7 +9,7 @@ for (var i = 0; i < list.length; i++) {
 		this.classList.add("selected");
 	});
 
-	list[i].addEventL istener("mouseout", function() {
+	list[i].addEventListener("mouseout", function() {
 		// body...
 		this.classList.remove("selected");
 	});

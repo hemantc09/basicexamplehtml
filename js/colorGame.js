@@ -1,101 +1,89 @@
-	// by hemantc09
+// by hemantc09
 var numOfSquares = 6; 
-var colors = generateRandomColors(numOfSquares) //string of array for 6 colors
+var colors = []; //colors empty array
+var pickedColor;   //pickColor(); //function pick color //goal color to be picked
 var squares = document.querySelectorAll(".square");
-//goal color to be picked
-var pickedColor =  pickColor(); //function pick color
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
-var reset = document.querySelector("#reset");
-var easyBtn = document.querySelector("#easyBtn");
-var hardBtn = document.querySelector("#hardBtn");
-//make is look like selected easy button
-easyBtn.addEventListener("click", function(){
-	easyBtn.classList.add("selected");
-	hardBtn.classList.remove("selected");
-	numOfSquares = 3; //easy mode 3 color only
-	colors = generateRandomColors(numOfSquares); //generate only 3 random colors for 3
-	pickedColor = pickColor();
-	colorDisplay.textContent = pickedColor;
-	for( var i = 0; i< squares.length ; i++){
-		if(colors[i]){
-			squares[i].style.backgroundColor = colors[i];
-		}
-		else{
-			squares[i].style.display = "none";
-		}
+var resetBtn = document.querySelector("#reset");
+var modeButtons =document.querySelectorAll(".mode"); //remember the . for the class
+init(); // init the game
+function init(){
+	setUpModeButtons(); //easy or hard
+	setUpSquares(); //set up all squares
+	resetfun(); //reset the game
+}
+function setUpModeButtons(){
+	//mode button event listen
+	for (var i = 0; i < modeButtons.length; i++) {
+		modeButtons[i].addEventListener("click", function(){
+			//remove the class selected for the safer side first
+			modeButtons[0].classList.remove("selected");
+			modeButtons[1].classList.remove("selected");
+			this.classList.add("selected");
+			//select the number of squares for easy and the hard mode
+			this.textContent === "Easy" ? numOfSquares = 3: numOfSquares  = 6; //ternary operator
+			resetfun();
+		});
 	}
-
-});
-
-//make is look like selected hard button
-hardBtn.addEventListener("click", function(){
-	hardBtn.classList.add("selected");
-	easyBtn.classList.remove("selected");
-	numOfSquares = 6;
-	colors = generateRandomColors(numOfSquares); //generate only 3 random colors for 3
-	pickedColor = pickColor();
-	colorDisplay.textContent = pickedColor;
-	for( var i = 0; i< squares.length ; i++){
-		squares[i].style.backgroundColor = colors[i];
-		squares[i].style.display = "block";
+}
+function setUpSquares(){
+	for (var i = 0; i < squares.length; i++) {
+	//on below line always use the style.backgroundColor instead of style.background
+	// because style.background doesnt work on FF
+	//add click listeres to square
+		squares[i].addEventListener("click",function(){
+			//grab color of the square
+			var clickedColor = this.style.backgroundColor;
+			//compare color to the picked color
+			if(clickedColor === pickedColor){ 
+				messageDisplay.textContent = "Correct!";
+				changeColors(clickedColor); //pass the clicked color to change all square same picked color
+				h1.style.backgroundColor = clickedColor; //make h1 background to clicked color
+				resetBtn.textContent = "Play Again?";	
+			}
+			else{
+				
+				this.style.backgroundColor =  "#232323";
+				messageDisplay.textContent = "Try again";
+			}
+		});
 	}
-});
-
-reset.addEventListener("click", function(){
+}
+function resetfun(){
 	//generate all new colors
 	colors = generateRandomColors(numOfSquares); // get teh array of colors[]
 	//pick new random colors from arrya 
 	pickedColor = pickColor();
 	//change colorDisplay to match pickedColor the span tag rgb(0,2,5) 
-	colorDisplay.textContent = pickedColor;
+	colorDisplay.textContent = pickedColor; //assigning the picked color to RGB text display
+	//after win reset the text for new Color
+	resetBtn.textContent = "New Color!"; 
 	//change colors of square
 	for(i = 0; i < squares.length; i++){
-		squares[i].style.backgroundColor = colors[i];
+		if(colors[i]){ // if there is a color in the array then change background
+			squares[i].style.display = "block";
+			squares[i].style.backgroundColor = colors[i];	
+		}else{ //if there is no color to change in the array hide it //mostly for easy mode 
+			squares[i].style.display = "none";
+		}
 	}
 	//change the background of h1
 	h1.style.backgroundColor = "#232323";
 	//change the message to blank
-	message.textContent = " ";
-});
-colorDisplay.textContent = pickedColor; //assigning the picked color to RGB text display
-
-for (var i = 0; i < squares.length; i++) {
-	//on below line always use the style.backgroundColor instead of style.background
-	// because style.background doesnt work on FF
-	//add initial colors
-	squares[i].style.backgroundColor = colors[i]; //assign colors the squares
-	//add click listeres to square
-	squares[i].addEventListener("click",function(){
-		//grab color of the square
-		var clickedColor = this.style.backgroundColor;
-		//compare color to the picked color
-		if(clickedColor === pickedColor){ 
-			console.log(clickedColor, pickedColor)
-			messageDisplay.textContent = "Correct!";
-			changeColors(clickedColor); //pass the clicked color to change all square same picked color
-			h1.style.backgroundColor = clickedColor; //make h1 background to clicked color
-			reset.textContent = "Play Again?";
-
-		}
-		else{
-			
-			this.style.backgroundColor =  "#232323";
-			messageDisplay.textContent = "Try again";
-		}
-
-	});
+	messageDisplay.textContent = " ";
 }
-
-
+resetBtn.addEventListener("click", function(){
+	resetfun();
+});
+// colorDisplay.textContent = pickedColor; 
 function changeColors(color){
 	//all square to change each color to the given color e.g. picked correct color
 	for (var i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = color;
 	}
 }
-
 function pickColor(){
 	//pick a random number
 	//random number is from array length and floor it to get the whole number
@@ -104,7 +92,6 @@ function pickColor(){
 	//random dont include 6 FYI.
 	return colors[random];
 }
-
 function generateRandomColors(num){
 	//make an array 
 	var arr = [];

@@ -69,6 +69,7 @@ button{
 	transition: all 0.3s;  /* how to animate 2 argument 'all'- all  '2.0s' - seconds*/
 	--webkit-transition: all 0.3s; /*for browser friendly*/
 	-moz-transition: all 0.3s; /*for mozila*/
+	outline: none;
 }
 
 button:hover {
